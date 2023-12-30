@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sidebar, Breadcrum } from "../components/index";
+import { Sidebar, Breadcrum, Modal } from "../components/index";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import React, { useState, useMemo } from "react";
 const AddNew = () => {
@@ -56,6 +56,7 @@ export default function Properties() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyChsjpSre5dmxOzusLacbrKo76TViXJiYc",
   });
+  const [openPopup, setOpenPopup] = useState(false);
   const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
   // const center = useMemo(() => userLocation, []);
   return (
@@ -65,6 +66,7 @@ export default function Properties() {
           <Sidebar />
         </div>
         <div className="w-full">
+          {openPopup ? <Modal /> : null}
           <div className="flex w-full p-3 bg-gray-200">
             <Breadcrum items={breadcrum} title="Properties">
               <div className="flex justify-end">
@@ -95,7 +97,12 @@ export default function Properties() {
               <div>
                 <div className="flex justify-between">
                   <div>Address:</div>
-                  <Link className="text-blue">Edit</Link>
+                  <Link
+                    className="text-blue"
+                    onClick={() => setOpenPopup(true)}
+                  >
+                    Edit
+                  </Link>
                 </div>
                 <div>
                   #189,Manjunath Nilaya,Gokul road,Ravi nagar,Hubli,Karnataka.
