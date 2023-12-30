@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { PROPERTY } from "../data/propery";
+// import * as filestack from "filestack-js";
 import {
   Sidebar,
   Breadcrum,
@@ -7,6 +8,7 @@ import {
   AddProperty,
   ListProperty,
 } from "../components/index";
+// const client = filestack.init("YOUR API KEY");
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import React, { useState, useMemo } from "react";
 
