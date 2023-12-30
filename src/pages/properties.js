@@ -26,50 +26,61 @@ export default function Properties() {
   const breadcrum = ["home", "Add Properties"];
   return (
     <div>
-      <h3>Properties</h3>
-      <div style={{ display: "flex", columnCount: 3 }}>
+      <div style={{ display: "flex", width: "100%" }}>
         <Sidebar />
         <div>
-          <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              backgroundColor: "#d0d0d0",
+              padding: 10,
+            }}
+          >
             <Breadcrum items={breadcrum} />
             <div style={{ display: "flex" }}>
-              <button>Save</button>
-              <button>Add New</button>
+              <button className="button button-primary">Save</button>
+              <button className="button button-primary">Add New</button>
             </div>
           </div>
-          <div>
-            <AddNew />
-            <ListView />
-          </div>
-          <div></div>
-        </div>
-        <div>
-          <div>
-            <div style={{ width: "30%", backgroundColor: "#d0d0d0" }}>
-              Upload Owner/Builder Photo
-            </div>
-            <button>Locate Address</button>
-          </div>
-          <div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <div>Address:</div>
-              <div>Edit</div>
+          <div style={{ display: "flex", columnCount: 2 }}>
+            <div>
+              <AddNew />
+              <ListView />
             </div>
             <div>
-              #189,Manjunath Nilaya,Gokul road,Ravi nagar,Hubli,Karnataka.
+              <div>
+                <div style={{ backgroundColor: "#d0d0d0" }}>
+                  Upload Owner/Builder Photo
+                </div>
+                <button className="button button-primary">
+                  Locate Address
+                </button>
+              </div>
+              <div>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <div>Address:</div>
+                  <div>Edit</div>
+                </div>
+                <div>
+                  #189,Manjunath Nilaya,Gokul road,Ravi nagar,Hubli,Karnataka.
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>Email:</div>
+                </div>
+                <div>manjunath@gmail.com</div>
+              </div>
+              <div>
+                <div>
+                  <div>Website:</div>
+                </div>
+                <div>yahoo.com</div>
+              </div>
             </div>
-          </div>
-          <div>
-            <div>
-              <div>Email:</div>
-            </div>
-            <div>manjunath@gmail.com</div>
-          </div>
-          <div>
-            <div>
-              <div>Website:</div>
-            </div>
-            <div>yahoo.com</div>
           </div>
         </div>
       </div>
