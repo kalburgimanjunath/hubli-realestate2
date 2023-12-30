@@ -12,6 +12,9 @@ export default function Welcome() {
         <Link to="/register" className="button button-primary">
           Register
         </Link>
+        <Link to="/home" className="button button-primary">
+          Dashboard
+        </Link>
       </div>
     </div>
   );

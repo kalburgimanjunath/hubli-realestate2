@@ -13,7 +13,9 @@ export default function Register() {
           <input type="text" placeholder="password" />
         </div>
         <div>
-          <button type="button" className="button primary-button" />
+          <button type="button" className="button primary-button">
+            Register
+          </button>
         </div>
       </form>
     </div>
