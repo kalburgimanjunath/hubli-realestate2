@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Sidebar } from "../components";
 export default function Home() {
-  const sidebar = ["properties", "category", "geolocation"];
   const blubs = [
     "properties",
     "categories",
@@ -10,12 +10,7 @@ export default function Home() {
   ];
   return (
     <div style={{ display: "flex" }}>
-      <div>
-        {sidebar &&
-          sidebar.map((item, index) => {
-            return <div key={index + item}>{item}</div>;
-          })}
-      </div>
+      <Sidebar />
       <div style={{ display: "flex" }}>
         {blubs &&
           blubs.map((item, index) => {

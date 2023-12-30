@@ -14,9 +14,9 @@ export default function Header() {
         {logo}
       </Link>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        {menu.map((item) => {
+        {menu.map((item, index) => {
           return (
-            <Link to={item} style={{ padding: 10 }}>
+            <Link key={item + index} to={item} style={{ padding: 10 }}>
               {item}
             </Link>
           );
