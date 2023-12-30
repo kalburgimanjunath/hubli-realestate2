@@ -5,7 +5,7 @@ export default function Breadcrum({ items }) {
       style={{
         display: "flex",
         width: "100%",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
       }}
     >
       {items &&

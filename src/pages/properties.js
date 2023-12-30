@@ -6,12 +6,12 @@ const AddNew = () => {
         <input type="text" placeholder="Category-agricultural land" />
         <input type="text" placeholder="Length" />
         <input type="text" placeholder="Width" />
-        <input type="checkbox" placeholder="Square/Not Square">
-          Square/Not Square
-        </input>
+        <input type="checkbox" placeholder="Square/Not Square" />
+        Square/Not Square
         <input type="text" placeholder="Length" />
         <input type="text" placeholder="Width" />
-        <input type="checkbox">Builder/Owner</input>
+        <input type="checkbox" />
+        Builder/Owner
         <input type="text" placeholder="Name" />
         <input type="text" placeholder="Phone" />
       </form>
@@ -27,7 +27,7 @@ export default function Properties() {
   return (
     <div>
       <h3>Properties</h3>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", columnCount: 3 }}>
         <Sidebar />
         <div>
           <div style={{ display: "flex" }}>
@@ -37,8 +37,40 @@ export default function Properties() {
               <button>Add New</button>
             </div>
           </div>
-          <AddNew />
-          <ListView />
+          <div>
+            <AddNew />
+            <ListView />
+          </div>
+          <div></div>
+        </div>
+        <div>
+          <div>
+            <div style={{ width: "30%", backgroundColor: "#d0d0d0" }}>
+              Upload Owner/Builder Photo
+            </div>
+            <button>Locate Address</button>
+          </div>
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div>Address:</div>
+              <div>Edit</div>
+            </div>
+            <div>
+              #189,Manjunath Nilaya,Gokul road,Ravi nagar,Hubli,Karnataka.
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>Email:</div>
+            </div>
+            <div>manjunath@gmail.com</div>
+          </div>
+          <div>
+            <div>
+              <div>Website:</div>
+            </div>
+            <div>yahoo.com</div>
+          </div>
         </div>
       </div>
     </div>
