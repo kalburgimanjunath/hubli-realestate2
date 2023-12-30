@@ -1,50 +1,14 @@
 import { Link } from "react-router-dom";
 import { PROPERTY } from "../data/propery";
-import { Sidebar, Breadcrum, Modal } from "../components/index";
+import {
+  Sidebar,
+  Breadcrum,
+  Modal,
+  AddProperty,
+  ListProperty,
+} from "../components/index";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import React, { useState, useMemo } from "react";
-const AddNew = () => {
-  return (
-    <div className="p-2 relative justify-left text-left">
-      <div>
-        <h3 className="p-2 font-bold">Property Details</h3>
-        <form>
-          <input type="text" placeholder="Category-agricultural land" />
-          <input type="text" placeholder="Length" />
-          <input type="text" placeholder="Width" />
-          <input type="checkbox" placeholder="Square/Not Square" />
-          Square/Not Square
-          <input type="text" placeholder="Length" />
-          <input type="text" placeholder="Width" />
-          <input type="checkbox" />
-          Builder/Owner
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Phone" />
-        </form>
-      </div>
-    </div>
-  );
-};
-const ListView = ({ items }) => {
-  return (
-    <div className="flex flex-wrap">
-      {items &&
-        items.map((item, index) => {
-          return (
-            <div
-              key={item + index}
-              className="w-half m-1 flex-wrap justify-center text-center items-center"
-            >
-              <div>
-                <img width={"100%"} src={item.property_photo} />
-              </div>
-              <div>{item.title + index}</div>
-            </div>
-          );
-        })}
-    </div>
-  );
-};
 
 export default function Properties() {
   const breadcrum = ["home", "Add Properties"];
@@ -95,9 +59,9 @@ export default function Properties() {
         </div>
         <div className="border-l-2 grid grid-cols-2 p-3">
           <div className="grid-cols-6 mr-2 pr-2">
-            <AddNew />
+            <AddProperty />
 
-            <ListView items={PROPERTY} />
+            <ListProperty items={PROPERTY} />
           </div>
           <div className="grid-cols-6 justify-center text-left border-l-2 m-2 p-2">
             <div className="w-60 items-center text-center">
