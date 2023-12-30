@@ -33,10 +33,10 @@ const ListView = ({ items }) => {
           return (
             <div
               key={item + index}
-              className="m-1 flex-wrap justify-center text-center items-center"
+              className="w-half m-1 flex-wrap justify-center text-center items-center"
             >
               <div>
-                <img width={100} height={100} src={item.property_photo} />
+                <img width={"100%"} src={item.property_photo} />
               </div>
               <div>{item.title + index}</div>
             </div>
