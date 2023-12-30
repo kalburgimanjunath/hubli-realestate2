@@ -54,7 +54,7 @@ export default function Properties() {
     }
   };
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao",
+    googleMapsApiKey: "AIzaSyChsjpSre5dmxOzusLacbrKo76TViXJiYc",
   });
   const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
   // const center = useMemo(() => userLocation, []);
