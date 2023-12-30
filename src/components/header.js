@@ -3,20 +3,18 @@ export default function Header() {
   const logo = "rlestate";
   const menu = ["home", "about", "services", "contact"];
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        justifyContent: "space-between",
-      }}
-    >
-      <Link to="/" style={{ padding: 10 }}>
+    <div className="flex w-full shadow-lg justify-between bg-gray-400 font-bold text-white">
+      <Link to="/" className="p-3 cursor-pointer">
         {logo}
       </Link>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="flex justify-between">
         {menu.map((item, index) => {
           return (
-            <Link key={item + index} to={item} style={{ padding: 10 }}>
+            <Link
+              key={item + index}
+              to={item}
+              className="p-3 cursor-pointer hover:bg-pink-400"
+            >
               {item}
             </Link>
           );

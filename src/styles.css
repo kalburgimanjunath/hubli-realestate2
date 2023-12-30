@@ -1,11 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .App {
   font-family: sans-serif;
   text-align: center;
 }
 .button-primary {
-  background-color: blue;
-  color: white;
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
+  @apply hover:bg-blue-700 bg-blue-500 text-white rounded-lg p-1 m-1 cursor-pointer;
+  min-width: 5rem;
+}
+input {
+  @apply w-full border-b-2 border-blue-200 p-2 m-2 hover:border-blue-200;
+}
+input[type="checkbox"] {
+  width: 100%;
+  display: flex;
 }
