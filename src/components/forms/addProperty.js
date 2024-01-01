@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ImageUpload from "./imageUpload";
 
-export default function AddProperty({ setOpenPopup }) {
+export default function AddProperty({ setOpenPopup, isLoaded }) {
   const [userLocation, setUserLocation] = useState(null);
   // const [openPopup, setOpenPopup] = useState(false);
   const getUserLocation = () => {
@@ -28,33 +29,32 @@ export default function AddProperty({ setOpenPopup }) {
   };
   return (
     <>
-      {" "}
-      <div className="p-2 relative justify-left text-left">
-        <div>
-          <h3 className="p-2 font-bold">Property Details</h3>
-          <form>
-            <input type="text" placeholder="Category-agricultural land" />
-            <input type="text" placeholder="Length" />
-            <input type="text" placeholder="Width" />
-            <input type="checkbox" placeholder="Square/Not Square" />
-            Square/Not Square
-            <input type="text" placeholder="Length" />
-            <input type="text" placeholder="Width" />
-            <input type="checkbox" />
-            Builder/Owner
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Phone" />
-          </form>
-        </div>
-      </div>
       <div className="border-l-2 grid grid-cols-2 p-3">
         <div className="grid-cols-6 mr-2 pr-2">
-          <AddProperty />
+          <div className="p-2 relative justify-left text-left">
+            <div>
+              <h3 className="p-2 font-bold">Property Details</h3>
+              <form>
+                <input type="text" placeholder="Category-agricultural land" />
+                <input type="text" placeholder="Length" />
+                <input type="text" placeholder="Width" />
+                <input type="checkbox" placeholder="Square/Not Square" />
+                Square/Not Square
+                <input type="text" placeholder="Length" />
+                <input type="text" placeholder="Width" />
+                <input type="checkbox" />
+                Builder/Owner
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Phone" />
+              </form>
+            </div>
+          </div>
         </div>
         <div className="grid-cols-6 justify-center text-left border-l-2 m-2 p-2">
           <div className="w-60 items-center text-center">
             <div className="flex w-40 h-40 bg-gray-200 items-center p-3">
               <span>Upload Owner/Builder Photo</span>
+              <ImageUpload />
             </div>
             <div className="block w-full m-2">
               <button
@@ -82,7 +82,7 @@ export default function AddProperty({ setOpenPopup }) {
                 <p>Longitude: {userLocation.longitude}</p>
               </div>
             )}
-            {/* {!isLoaded ? <h1>Loading...</h1> : <NewMap />} */}
+            {!isLoaded ? <h1>Loading...</h1> : null}
           </div>
           <div>
             <div>

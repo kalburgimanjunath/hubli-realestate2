@@ -23,7 +23,7 @@ export default function Properties() {
     "add categories",
   ];
 
-  // const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded] = useState(true);
   // const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
   // const center = useMemo(() => userLocation, []);
   const [sidebarSelectedItem, setSidebarItem] = useState("properties");
@@ -42,7 +42,6 @@ export default function Properties() {
   return (
     <div className="flex">
       <div className="w-1/3">
-        {sidebarSelectedItem}
         <Sidebar sidebar={sidebar} setSidebarItem={setSidebarItem} />
       </div>
       <div className="w-full">
@@ -63,10 +62,12 @@ export default function Properties() {
         {sidebarSelectedItem == "properties" ? (
           <ListProperty items={PROPERTY} />
         ) : sidebarSelectedItem == "add properties" ? (
-          <AddProperty setOpenPopup={setOpenPopup} />
+          <AddProperty setOpenPopup={setOpenPopup} isLoaded={isLoaded} />
         ) : sidebarSelectedItem == "category" ? (
           <AddCategory />
-        ) : null}
+        ) : (
+          <AddCategory />
+        )}
       </div>
     </div>
   );
