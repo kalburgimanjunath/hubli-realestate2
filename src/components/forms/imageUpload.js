@@ -29,27 +29,15 @@ export default class ImageUpload extends Component {
   render() {
     return (
       <form>
-        <div className="form-group multi-preview">
+        <div className="multi-preview">
           {(this.fileArray || []).map((url, index) => (
             <img key={index} width={100} height={100} src={url} alt="..." />
           ))}
         </div>
 
-        <div className="form-group">
-          <input
-            type="file"
-            className="form-control"
-            onChange={this.uploadMultipleFiles}
-            multiple
-          />
+        <div className="flex relative">
+          <input type="file" onChange={this.uploadMultipleFiles} multiple />
         </div>
-        <button
-          type="button"
-          className="btn btn-danger btn-block"
-          onClick={this.uploadFiles}
-        >
-          Upload
-        </button>
       </form>
     );
   }
