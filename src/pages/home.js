@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sidebar } from "../components";
+import { Banner, Sidebar } from "../components";
 export default function Home() {
   const blubs = [
     "properties",
@@ -9,8 +9,13 @@ export default function Home() {
     "agricultural land",
   ];
   return (
-    <div style={{ display: "flex" }}>
+    <div className="grid grid-cols-2">
       <Sidebar />
+      <Banner
+        title="LUXURY VILLA
+MINUTES
+FROM THE BAY"
+      />
       <div style={{ display: "flex" }}>
         {blubs &&
           blubs.map((item, index) => {
